@@ -78,6 +78,38 @@ def load_command_table(self, _):
         g.custom_command('get-active-session', 'network_get_active_session')
         g.custom_command('supported-security-provider', 'network_supported_security_provider')
 
+    from ..generated._client_factory import cf_network_interface
+
+    network_network_interface = CliCommandType(
+        operations_tmpl='azure.mgmt.network.operations._network_interfaces_operations#NetworkInterfacesOperations.{}',
+        client_factory=cf_network_interface,
+    )
+    with self.command_group(
+        'network network-interface', network_network_interface, client_factory=cf_network_interface
+    ) as g:
+        g.custom_command(
+            'show-virtual-machine-scale-set-ip-configuration',
+            'network_network_interface_show_virtual_machine_scale_set_ip_configuration',
+        )
+
+    from ..generated._client_factory import cf_public_ip_address
+
+    network_public_ip_address = CliCommandType(
+        operations_tmpl='azure.mgmt.network.operations._public_ip_addresses_operations#PublicIpAddressesOperations.{}',
+        client_factory=cf_public_ip_address,
+    )
+    with self.command_group(
+        'network public-ip-address', network_public_ip_address, client_factory=cf_public_ip_address
+    ) as g:
+        g.custom_command(
+            'list-virtual-machine-scale-set-vm-public-ip-address',
+            'network_public_ip_address_list_virtual_machine_scale_set_vm_public_ip_address',
+        )
+        g.custom_command(
+            'show-virtual-machine-scale-set-public-ip-address',
+            'network_public_ip_address_show_virtual_machine_scale_set_public_ip_address',
+        )
+
     from ..generated._client_factory import cf_custom_ip_prefix
 
     network_custom_ip_prefix = CliCommandType(
@@ -190,20 +222,6 @@ def load_command_table(self, _):
     ) as g:
         g.custom_command('list', 'network_load_balancer_network_interface_list')
 
-    from ..generated._client_factory import cf_network_interface
-
-    network_network_interface = CliCommandType(
-        operations_tmpl='azure.mgmt.network.operations._network_interfaces_operations#NetworkInterfacesOperations.{}',
-        client_factory=cf_network_interface,
-    )
-    with self.command_group(
-        'network network-interface', network_network_interface, client_factory=cf_network_interface
-    ) as g:
-        g.custom_command(
-            'show-virtual-machine-scale-set-ip-configuration',
-            'network_network_interface_show_virtual_machine_scale_set_ip_configuration',
-        )
-
     from ..generated._client_factory import cf_network_interface_ip_configuration
 
     network_network_interface_ip_configuration = CliCommandType(
@@ -285,24 +303,6 @@ def load_command_table(self, _):
         )
         g.custom_command(
             'show-private-endpoint-connection', 'network_private_link_service_show_private_endpoint_connection'
-        )
-
-    from ..generated._client_factory import cf_public_ip_address
-
-    network_public_ip_address = CliCommandType(
-        operations_tmpl='azure.mgmt.network.operations._public_ip_addresses_operations#PublicIpAddressesOperations.{}',
-        client_factory=cf_public_ip_address,
-    )
-    with self.command_group(
-        'network public-ip-address', network_public_ip_address, client_factory=cf_public_ip_address
-    ) as g:
-        g.custom_command(
-            'list-virtual-machine-scale-set-vm-public-ip-address',
-            'network_public_ip_address_list_virtual_machine_scale_set_vm_public_ip_address',
-        )
-        g.custom_command(
-            'show-virtual-machine-scale-set-public-ip-address',
-            'network_public_ip_address_show_virtual_machine_scale_set_public_ip_address',
         )
 
     from ..generated._client_factory import cf_virtual_network

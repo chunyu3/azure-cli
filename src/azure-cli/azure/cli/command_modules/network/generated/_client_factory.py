@@ -32,6 +32,14 @@ def cf_web_category(cli_ctx, *_):
     return cf_network_cl(cli_ctx).web_categories
 
 
+def cf_network_interface(cli_ctx, *_):
+    return cf_network_cl(cli_ctx).network_interfaces
+
+
+def cf_public_ip_address(cli_ctx, *_):
+    return cf_network_cl(cli_ctx).public_ip_addresses
+
+
 def cf_custom_ip_prefix(cli_ctx, *_):
     return cf_network_cl(cli_ctx).custom_ip_prefixes
 
@@ -60,10 +68,6 @@ def cf_load_balancer_network_interface(cli_ctx, *_):
     return cf_network_cl(cli_ctx).load_balancer_network_interfaces
 
 
-def cf_network_interface(cli_ctx, *_):
-    return cf_network_cl(cli_ctx).network_interfaces
-
-
 def cf_network_interface_ip_configuration(cli_ctx, *_):
     return cf_network_cl(cli_ctx).network_interface_ip_configurations
 
@@ -86,10 +90,6 @@ def cf_network_watcher(cli_ctx, *_):
 
 def cf_private_link_service(cli_ctx, *_):
     return cf_network_cl(cli_ctx).private_link_services
-
-
-def cf_public_ip_address(cli_ctx, *_):
-    return cf_network_cl(cli_ctx).public_ip_addresses
 
 
 def cf_virtual_network(cli_ctx, *_):

@@ -68,12 +68,12 @@ class VirtualnetworksScenarioTest(ScenarioTest):
 
         self.kwargs.update({
             'myApplicationGateway': 'appgw',
+            'myNetworkInterface': 'nic1',
+            'myPublicIpAddress': 'pub1',
             'myCustomIpPrefix': 'test-customipprefix',
             'myInboundNatRule': self.create_random_name(prefix='natRule1.1'[:5], length=10),
-            'myNetworkInterface': 'nic1',
             'myDefaultSecurityRule': 'AllowVnetInBound',
             'myNetworkWatcher': 'nw1',
-            'myPublicIpAddress': 'pub1',
             'myVirtualNetwork': 'vnetName',
             'mySubnet': 'subnet1',
             'myVirtualNetworkGatewayConnection': 'vpngw',

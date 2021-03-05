@@ -71,6 +71,37 @@ def load_arguments(self, _):
         c.argument('virtual_wan_name', type=str, help='The name of the VirtualWAN for which supported security '
                    'providers are needed.', id_part='name')
 
+    with self.argument_context('network network-interface show-virtual-machine-scale-set-ip-configuration') as c:
+        c.argument('resource_group_name', resource_group_name_type)
+        c.argument('virtual_machine_scale_set_name', type=str, help='The name of the virtual machine scale set.',
+                   id_part='name')
+        c.argument('virtualmachine_index', type=str, help='The virtual machine index.', id_part='child_name_1')
+        c.argument('network_interface_name', options_list=['--name', '-n', '--network-interface-name'], type=str,
+                   help='The name of the network interface.', id_part='child_name_2')
+        c.argument('ip_configuration_name', type=str, help='The name of the ip configuration.',
+                   id_part='child_name_3')
+        c.argument('expand', type=str, help='Expands referenced resources.')
+
+    with self.argument_context('network public-ip-address list-virtual-machine-scale-set-vm-public-ip-address') as c:
+        c.argument('resource_group_name', resource_group_name_type)
+        c.argument('virtual_machine_scale_set_name', type=str, help='The name of the virtual machine scale set.')
+        c.argument('virtualmachine_index', type=str, help='The virtual machine index.')
+        c.argument('network_interface_name', type=str, help='The network interface name.')
+        c.argument('ip_configuration_name', type=str, help='The IP configuration name.')
+
+    with self.argument_context('network public-ip-address show-virtual-machine-scale-set-public-ip-address') as c:
+        c.argument('resource_group_name', resource_group_name_type)
+        c.argument('virtual_machine_scale_set_name', type=str, help='The name of the virtual machine scale set.',
+                   id_part='name')
+        c.argument('virtualmachine_index', type=str, help='The virtual machine index.', id_part='child_name_1')
+        c.argument('network_interface_name', type=str, help='The name of the network interface.',
+                   id_part='child_name_2')
+        c.argument('ip_configuration_name', type=str, help='The name of the IP configuration.',
+                   id_part='child_name_3')
+        c.argument('public_ip_address_name', options_list=['--name', '-n', '--public-ip-address-name'], type=str,
+                   help='The name of the public IP Address.', id_part='child_name_4')
+        c.argument('expand', type=str, help='Expands referenced resources.')
+
     with self.argument_context('network custom-ip-prefix list') as c:
         c.argument('resource_group_name', resource_group_name_type)
 
@@ -252,17 +283,6 @@ def load_arguments(self, _):
         c.argument('resource_group_name', resource_group_name_type)
         c.argument('load_balancer_name', type=str, help='The name of the load balancer.')
 
-    with self.argument_context('network network-interface show-virtual-machine-scale-set-ip-configuration') as c:
-        c.argument('resource_group_name', resource_group_name_type)
-        c.argument('virtual_machine_scale_set_name', type=str, help='The name of the virtual machine scale set.',
-                   id_part='name')
-        c.argument('virtualmachine_index', type=str, help='The virtual machine index.', id_part='child_name_1')
-        c.argument('network_interface_name', options_list=['--name', '-n', '--network-interface-name'], type=str,
-                   help='The name of the network interface.', id_part='child_name_2')
-        c.argument('ip_configuration_name', type=str, help='The name of the ip configuration.',
-                   id_part='child_name_3')
-        c.argument('expand', type=str, help='Expands referenced resources.')
-
     with self.argument_context('network network-interface-ip-configuration list') as c:
         c.argument('resource_group_name', resource_group_name_type)
         c.argument('network_interface_name', type=str, help='The name of the network interface.')
@@ -327,26 +347,6 @@ def load_arguments(self, _):
         c.argument('service_name', type=str, help='The name of the private link service.', id_part='name')
         c.argument('pe_connection_name', type=str, help='The name of the private end point connection.',
                    id_part='child_name_1')
-        c.argument('expand', type=str, help='Expands referenced resources.')
-
-    with self.argument_context('network public-ip-address list-virtual-machine-scale-set-vm-public-ip-address') as c:
-        c.argument('resource_group_name', resource_group_name_type)
-        c.argument('virtual_machine_scale_set_name', type=str, help='The name of the virtual machine scale set.')
-        c.argument('virtualmachine_index', type=str, help='The virtual machine index.')
-        c.argument('network_interface_name', type=str, help='The network interface name.')
-        c.argument('ip_configuration_name', type=str, help='The IP configuration name.')
-
-    with self.argument_context('network public-ip-address show-virtual-machine-scale-set-public-ip-address') as c:
-        c.argument('resource_group_name', resource_group_name_type)
-        c.argument('virtual_machine_scale_set_name', type=str, help='The name of the virtual machine scale set.',
-                   id_part='name')
-        c.argument('virtualmachine_index', type=str, help='The virtual machine index.', id_part='child_name_1')
-        c.argument('network_interface_name', type=str, help='The name of the network interface.',
-                   id_part='child_name_2')
-        c.argument('ip_configuration_name', type=str, help='The name of the IP configuration.',
-                   id_part='child_name_3')
-        c.argument('public_ip_address_name', options_list=['--name', '-n', '--public-ip-address-name'], type=str,
-                   help='The name of the public IP Address.', id_part='child_name_4')
         c.argument('expand', type=str, help='Expands referenced resources.')
 
     with self.argument_context('network virtual-network list-usage') as c:

@@ -91,6 +91,51 @@ def network_supported_security_provider(client,
                                                virtual_wan_name=virtual_wan_name)
 
 
+def network_network_interface_show_virtual_machine_scale_set_ip_configuration(client,
+                                                                              resource_group_name,
+                                                                              virtual_machine_scale_set_name,
+                                                                              virtualmachine_index,
+                                                                              network_interface_name,
+                                                                              ip_configuration_name,
+                                                                              expand=None):
+    return client.get_virtual_machine_scale_set_ip_configuration(resource_group_name=resource_group_name,
+                                                                 virtual_machine_scale_set_name=virtual_machine_scale_set_name,
+                                                                 virtualmachine_index=virtualmachine_index,
+                                                                 network_interface_name=network_interface_name,
+                                                                 ip_configuration_name=ip_configuration_name,
+                                                                 expand=expand)
+
+
+def network_public_ip_address_list_virtual_machine_scale_set_vm_public_ip_address(client,
+                                                                                  resource_group_name,
+                                                                                  virtual_machine_scale_set_name,
+                                                                                  virtualmachine_index,
+                                                                                  network_interface_name,
+                                                                                  ip_configuration_name):
+    return client.list_virtual_machine_scale_set_vm_public_ip_addresses(resource_group_name=resource_group_name,
+                                                                        virtual_machine_scale_set_name=virtual_machine_scale_set_name,
+                                                                        virtualmachine_index=virtualmachine_index,
+                                                                        network_interface_name=network_interface_name,
+                                                                        ip_configuration_name=ip_configuration_name)
+
+
+def network_public_ip_address_show_virtual_machine_scale_set_public_ip_address(client,
+                                                                               resource_group_name,
+                                                                               virtual_machine_scale_set_name,
+                                                                               virtualmachine_index,
+                                                                               network_interface_name,
+                                                                               ip_configuration_name,
+                                                                               public_ip_address_name,
+                                                                               expand=None):
+    return client.get_virtual_machine_scale_set_public_ip_address(resource_group_name=resource_group_name,
+                                                                  virtual_machine_scale_set_name=virtual_machine_scale_set_name,
+                                                                  virtualmachine_index=virtualmachine_index,
+                                                                  network_interface_name=network_interface_name,
+                                                                  ip_configuration_name=ip_configuration_name,
+                                                                  public_ip_address_name=public_ip_address_name,
+                                                                  expand=expand)
+
+
 def network_custom_ip_prefix_list(client,
                                   resource_group_name):
     return client.list(resource_group_name=resource_group_name)
@@ -371,21 +416,6 @@ def network_load_balancer_network_interface_list(client,
                        load_balancer_name=load_balancer_name)
 
 
-def network_network_interface_show_virtual_machine_scale_set_ip_configuration(client,
-                                                                              resource_group_name,
-                                                                              virtual_machine_scale_set_name,
-                                                                              virtualmachine_index,
-                                                                              network_interface_name,
-                                                                              ip_configuration_name,
-                                                                              expand=None):
-    return client.get_virtual_machine_scale_set_ip_configuration(resource_group_name=resource_group_name,
-                                                                 virtual_machine_scale_set_name=virtual_machine_scale_set_name,
-                                                                 virtualmachine_index=virtualmachine_index,
-                                                                 network_interface_name=network_interface_name,
-                                                                 ip_configuration_name=ip_configuration_name,
-                                                                 expand=expand)
-
-
 def network_network_interface_ip_configuration_list(client,
                                                     resource_group_name,
                                                     network_interface_name):
@@ -502,36 +532,6 @@ def network_private_link_service_show_private_endpoint_connection(client,
                                                   service_name=service_name,
                                                   pe_connection_name=pe_connection_name,
                                                   expand=expand)
-
-
-def network_public_ip_address_list_virtual_machine_scale_set_vm_public_ip_address(client,
-                                                                                  resource_group_name,
-                                                                                  virtual_machine_scale_set_name,
-                                                                                  virtualmachine_index,
-                                                                                  network_interface_name,
-                                                                                  ip_configuration_name):
-    return client.list_virtual_machine_scale_set_vm_public_ip_addresses(resource_group_name=resource_group_name,
-                                                                        virtual_machine_scale_set_name=virtual_machine_scale_set_name,
-                                                                        virtualmachine_index=virtualmachine_index,
-                                                                        network_interface_name=network_interface_name,
-                                                                        ip_configuration_name=ip_configuration_name)
-
-
-def network_public_ip_address_show_virtual_machine_scale_set_public_ip_address(client,
-                                                                               resource_group_name,
-                                                                               virtual_machine_scale_set_name,
-                                                                               virtualmachine_index,
-                                                                               network_interface_name,
-                                                                               ip_configuration_name,
-                                                                               public_ip_address_name,
-                                                                               expand=None):
-    return client.get_virtual_machine_scale_set_public_ip_address(resource_group_name=resource_group_name,
-                                                                  virtual_machine_scale_set_name=virtual_machine_scale_set_name,
-                                                                  virtualmachine_index=virtualmachine_index,
-                                                                  network_interface_name=network_interface_name,
-                                                                  ip_configuration_name=ip_configuration_name,
-                                                                  public_ip_address_name=public_ip_address_name,
-                                                                  expand=expand)
 
 
 def network_virtual_network_list_usage(client,

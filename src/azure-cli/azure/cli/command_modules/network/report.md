@@ -14,6 +14,8 @@
 |az network application-security-group|ApplicationSecurityGroups|[commands](#CommandsInApplicationSecurityGroups)|
 |az network web-category|WebCategories|[commands](#CommandsInWebCategories)|
 |az network||[commands](#CommandsIn)|
+|az network network-interface|NetworkInterfaces|[commands](#CommandsInNetworkInterfaces)|
+|az network public-ip-address|PublicIPAddresses|[commands](#CommandsInPublicIPAddresses)|
 |az network custom-ip-prefix|CustomIPPrefixes|[commands](#CommandsInCustomIPPrefixes)|
 |az network express-route-circuit-connection|ExpressRouteCircuitConnections|[commands](#CommandsInExpressRouteCircuitConnections)|
 |az network express-route-circuit|ExpressRouteCircuits|[commands](#CommandsInExpressRouteCircuits)|
@@ -21,14 +23,12 @@
 |az network load-balancer-frontend-ip-configuration|LoadBalancerFrontendIPConfigurations|[commands](#CommandsInLoadBalancerFrontendIPConfigurations)|
 |az network inbound-nat-rule|InboundNatRules|[commands](#CommandsInInboundNatRules)|
 |az network load-balancer-network-interface|LoadBalancerNetworkInterfaces|[commands](#CommandsInLoadBalancerNetworkInterfaces)|
-|az network network-interface|NetworkInterfaces|[commands](#CommandsInNetworkInterfaces)|
 |az network network-interface-ip-configuration|NetworkInterfaceIPConfigurations|[commands](#CommandsInNetworkInterfaceIPConfigurations)|
 |az network network-interface-load-balancer|NetworkInterfaceLoadBalancers|[commands](#CommandsInNetworkInterfaceLoadBalancers)|
 |az network network-interface-tap-configuration|NetworkInterfaceTapConfigurations|[commands](#CommandsInNetworkInterfaceTapConfigurations)|
 |az network default-security-rule|DefaultSecurityRules|[commands](#CommandsInDefaultSecurityRules)|
 |az network network-watcher|NetworkWatchers|[commands](#CommandsInNetworkWatchers)|
 |az network private-link-service|PrivateLinkServices|[commands](#CommandsInPrivateLinkServices)|
-|az network public-ip-address|PublicIPAddresses|[commands](#CommandsInPublicIPAddresses)|
 |az network virtual-network|VirtualNetworks|[commands](#CommandsInVirtualNetworks)|
 |az network subnet|Subnets|[commands](#CommandsInSubnets)|
 |az network resource-navigation-link|ResourceNavigationLinks|[commands](#CommandsInResourceNavigationLinks)|

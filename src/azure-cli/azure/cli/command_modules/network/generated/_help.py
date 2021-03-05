@@ -124,6 +124,49 @@ helps['network supported-security-provider'] = """
                az network supported-security-provider --resource-group "rg1" --virtual-wan-name "wan1"
 """
 
+helps['network network-interface'] = """
+    type: group
+    short-summary: Manage network interface with network
+"""
+
+helps['network network-interface show-virtual-machine-scale-set-ip-configuration'] = """
+    type: command
+    short-summary: "Get the specified network interface ip configuration in a virtual machine scale set."
+    examples:
+      - name: Get virtual machine scale set network interface
+        text: |-
+               az network network-interface show-virtual-machine-scale-set-ip-configuration --ip-configuration-name \
+"ip1" --name "nic1" --resource-group "rg1" --virtual-machine-scale-set-name "vmss1" --virtualmachine-index "2"
+"""
+
+helps['network public-ip-address'] = """
+    type: group
+    short-summary: Manage public ip address with network
+"""
+
+helps['network public-ip-address list-virtual-machine-scale-set-vm-public-ip-address'] = """
+    type: command
+    short-summary: "Gets information about all public IP addresses in a virtual machine IP configuration in a virtual \
+machine scale set."
+    examples:
+      - name: ListVMSSVMPublicIP
+        text: |-
+               az network public-ip-address list-virtual-machine-scale-set-vm-public-ip-address \
+--ip-configuration-name "ip1" --network-interface-name "nic1" --resource-group "vmss-tester" \
+--virtual-machine-scale-set-name "vmss1" --virtualmachine-index 1
+"""
+
+helps['network public-ip-address show-virtual-machine-scale-set-public-ip-address'] = """
+    type: command
+    short-summary: "Get the specified public IP address in a virtual machine scale set."
+    examples:
+      - name: GetVMSSPublicIP
+        text: |-
+               az network public-ip-address show-virtual-machine-scale-set-public-ip-address --ip-configuration-name \
+"ip1" --network-interface-name "nic1" --name "pub1" --resource-group "vmss-tester" --virtual-machine-scale-set-name \
+"vmss1" --virtualmachine-index 1
+"""
+
 helps['network custom-ip-prefix'] = """
     type: group
     short-summary: Manage custom ip prefix with network
@@ -409,21 +452,6 @@ helps['network load-balancer-network-interface list'] = """
                az network load-balancer-network-interface list --load-balancer-name "lb" --resource-group "testrg"
 """
 
-helps['network network-interface'] = """
-    type: group
-    short-summary: Manage network interface with network
-"""
-
-helps['network network-interface show-virtual-machine-scale-set-ip-configuration'] = """
-    type: command
-    short-summary: "Get the specified network interface ip configuration in a virtual machine scale set."
-    examples:
-      - name: Get virtual machine scale set network interface
-        text: |-
-               az network network-interface show-virtual-machine-scale-set-ip-configuration --ip-configuration-name \
-"ip1" --name "nic1" --resource-group "rg1" --virtual-machine-scale-set-name "vmss1" --virtualmachine-index "2"
-"""
-
 helps['network network-interface-ip-configuration'] = """
     type: group
     short-summary: Manage network interface ip configuration with network
@@ -596,34 +624,6 @@ group."
         text: |-
                az network private-link-service show-private-endpoint-connection --pe-connection-name \
 "testPlePeConnection" --resource-group "rg1" --name "testPls"
-"""
-
-helps['network public-ip-address'] = """
-    type: group
-    short-summary: Manage public ip address with network
-"""
-
-helps['network public-ip-address list-virtual-machine-scale-set-vm-public-ip-address'] = """
-    type: command
-    short-summary: "Gets information about all public IP addresses in a virtual machine IP configuration in a virtual \
-machine scale set."
-    examples:
-      - name: ListVMSSVMPublicIP
-        text: |-
-               az network public-ip-address list-virtual-machine-scale-set-vm-public-ip-address \
---ip-configuration-name "ip1" --network-interface-name "nic1" --resource-group "vmss-tester" \
---virtual-machine-scale-set-name "vmss1" --virtualmachine-index 1
-"""
-
-helps['network public-ip-address show-virtual-machine-scale-set-public-ip-address'] = """
-    type: command
-    short-summary: "Get the specified public IP address in a virtual machine scale set."
-    examples:
-      - name: GetVMSSPublicIP
-        text: |-
-               az network public-ip-address show-virtual-machine-scale-set-public-ip-address --ip-configuration-name \
-"ip1" --network-interface-name "nic1" --name "pub1" --resource-group "vmss-tester" --virtual-machine-scale-set-name \
-"vmss1" --virtualmachine-index 1
 """
 
 helps['network virtual-network'] = """
