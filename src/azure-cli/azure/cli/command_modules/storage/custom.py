@@ -43,3 +43,10 @@ try:
     from .manual.custom import *  # noqa: F403
 except ImportError:
     pass
+
+
+from .generated.custom import *  # noqa: F403
+try:
+    from .manual.custom import *  # noqa: F403
+except ImportError:
+    pass
